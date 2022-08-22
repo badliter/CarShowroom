@@ -1,0 +1,24 @@
+server:
+  port: 8083
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: UTC
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/carshowroom
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:/migration/changelog.xml
+
+logging:
+  level:
+    ROOT: INFO
